@@ -12,12 +12,12 @@ func main() {
 }
 func handler(w http.ResponseWriter, r *http.Request) {
 	
-	requestURL := "http://exe2-app2-1:8088"
+	requestURL := "http://docker_exe2-app2-1:8088"
 	//requestURL ="https://jsonplaceholder.typicode.com/posts/1"
 	resp, _ := http.Get(requestURL)
 	//defer resp.Body.Close()
 
 	resBody, _ := io.ReadAll(resp.Body)
 	//resBody, _ := httputil.DumpResponse(res, true)
-	fmt.Fprintf(w, "Hello from " + r.RemoteAddr+" to " +r.Host +string(resBody) )
+	fmt.Fprintf(w, "Hello from " + r.RemoteAddr+"\nto " +r.Host +"\n"+string(resBody) )
 }
