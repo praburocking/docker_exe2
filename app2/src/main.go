@@ -10,5 +10,5 @@ func main() {
 	http.ListenAndServe(":8088", nil)
 }
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello from " + r.RemoteAddr+" to " +r.Host )
+	fmt.Fprintf(w, "Hello from " + r.RemoteAddr+"\nto " +r.Host+"\n" )
 }
